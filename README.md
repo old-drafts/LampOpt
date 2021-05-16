@@ -15,7 +15,7 @@ LampOpt是一个基于C++的控制台命令解析库，优点是体型小、适�
 
 `odt.h`头文件内定义了一个名为`LampOpt`的`namespace`，其中有以下内容：
 
-```
+```cpp
 struct CommandRead{//用于存储读取成功的参数的结构体
 		std::string CommandName; //参数名称
 		int argvl;//该参数对应的参数值在argv[]中的开始下标
@@ -25,7 +25,7 @@ struct CommandRead{//用于存储读取成功的参数的结构体
 
 和一个函数`std::vector<CommandRead> getopt`，用于读取命令，其原型如下：
 
-```
+```cpp
 std::vector<CommandRead> getopt(int argc,char *argv[],std::vector<std::string>Settings)
 ```
 
@@ -43,7 +43,7 @@ std::vector<CommandRead> getopt(int argc,char *argv[],std::vector<std::string>Se
 
 如下为简单使用实例可以读取参数并输出读取到的参数与对应参数值：
 
-```
+```cpp
 #include "opt.h"
 #include<iostream>
 #include<vector>
