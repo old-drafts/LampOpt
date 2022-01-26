@@ -9,7 +9,7 @@ Copyright(c) 2022 nu11ptr.
 #include <string>
 #include <vector>
 
-namespace LamaOpt {
+namespace LampOpt {
 typedef struct Arguments {
   std::map<std::string, std::string> args;
   Arguments() {}
@@ -19,16 +19,13 @@ typedef struct Arguments {
     for (size_t i = 0; i < arg.size(); i++) {
       size_t p = arg[i].find_first_of('=');
       if (p == std::string::npos) {
-        if (alias.find(arg[i]) != alias.cend())
-          args[alias.at(arg[i])] = "true";
-        else
-          args[arg[i]] = "true";
+        if (alias.find(arg[i]) != alias.cend())args[alias.at(arg[i])] = "true";
+        else args[arg[i]] = "true";
       } else {
         std::string&& x = arg[i].substr(0, p - 1);
         if (alias.find(x) != alias.cend())
           args[alias.at(x)] = arg[i].substr(p);
-        else
-          args[x] = arg[i].substr(p);
+        else args[x] = arg[i].substr(p);
       }
     }
   }

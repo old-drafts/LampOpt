@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
   std::map<std::string, std::string> alias;  // aliases
   alias["--help"] = "-h";
   for (size_t i = 1; i < argc; i++) args[i - 1] = std::string(argv[i]);
-  LamaOpt::Arguments arg(args, alias);
+  LampOpt::Arguments arg(args, alias);
   if (arg.args.empty()) {
     std::cout << "no arguments given" << std::endl;
     return 1;
